@@ -1,0 +1,2 @@
+# MoneyMaker
+Trading tool manager

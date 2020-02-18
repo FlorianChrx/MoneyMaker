@@ -1,21 +1,23 @@
-function button(){
-    let unite = document.getElementById('unite').value;
-    let prix_achat = document.getElementById('prix_achat').value;
-    let quantite_achetee = document.getElementById('quantite_achetee').value;
-    let prix_vente = document.getElementById('prix_vente').value;
+const action = function calcul() {
+    const prix_achat = document.getElementById('prix_achat').value;
+    const quantite_achetee = document.getElementById('quantite_achetee').value;
+    const prix_vente = document.getElementById('prix_vente').value;
 
 
-    let pourcentage = prix_vente > prix_achat ? (prix_vente / prix_achat - 1) * 100 : -((prix_achat / prix_vente - 1) * 100);
+    const pourcentage = prix_vente > prix_achat ? (prix_vente / prix_achat - 1) * 100 : -((prix_achat / prix_vente - 1) * 100);
 
-    let gain = quantite_achetee * (1 + pourcentage / 100);
+    const gain = quantite_achetee * (1 + pourcentage / 100);
 
 
-    let benefice = gain - quantite_achetee;
+    const benefice = gain - quantite_achetee;
 
-    document.getElementById('uniteAff').innerHTML = unite;
     document.getElementById('pourcentage').innerHTML = "Pourcentage : " + pourcentage.toFixed(2) + " %";
-    document.getElementById('gain').innerHTML = "Gain " + gain.toFixed(2) + " " + unite;
-    document.getElementById('benefice').innerHTML = "Bénéfice : " + benefice.toFixed(2) + " " + unite;
-    if(benefice > 0) document.getElementById('benefice').style.color = "green";
-    else document.getElementById('benefice').style.color = "red";
+    document.getElementById('gain').innerHTML = "Gain " + gain.toFixed(2) + " ";
+    document.getElementById('benefices').innerHTML = "Bénéfice : " + benefice.toFixed(2);
+    if(benefice > 0) document.getElementById('benefices').style.color = "green";
+    else document.getElementById('benefices').style.color = "red";
 }
+
+document.getElementById('prix_achat').onchange = action;
+document.getElementById('quantite_achetee').onchange = action;
+document.getElementById('prix_vente').onchange = action;

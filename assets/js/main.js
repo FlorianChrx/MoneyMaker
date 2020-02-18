@@ -29,3 +29,4 @@ let action = function calcul(){
 document.getElementById('prix_achat').onchange = action;
 document.getElementById('quantite_achetee').onchange = action;
 document.getElementById('prix_vente').onchange = action;
+

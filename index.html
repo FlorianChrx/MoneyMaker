@@ -36,22 +36,22 @@
 </div>
 <!-- TradingView Widget END --></form>
     </div><button class="btn btn-primary border rounded-circle" type="button" data-toggle="modal" data-target="#chart" style="width: 45px;height: 45px;"><i class="fa fa-line-chart"></i></button>
-    <div class="modal fade" role="dialog" tabindex="-1" id="chart">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" role="dialog" tabindex="-1" id="chart" style="height: 800vh;">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header" style="width: 100%;">
                     <h4 class="modal-title">Graphique trading</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body" style="width: 100%;"><!-- TradingView Widget BEGIN -->
+                <div class="modal-body" style="width: 100%;padding: 0px;"><!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
-  <div id="tradingview_1cc8f"></div>
+  <div id="tradingview_23578"></div>
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
   <script type="text/javascript">
   new TradingView.widget(
   {
-  "width": 470,
-  "height": 460,
+  "width": 980,
+  "height": 610,
   "symbol": "BINANCE:BTCUSDT",
-  "interval": "D",
+  "interval": "60",
   "timezone": "Etc/UTC",
   "theme": "Light",
   "style": "1",
@@ -59,19 +59,18 @@
   "toolbar_bg": "#f1f3f6",
   "enable_publishing": false,
   "allow_symbol_change": true,
-  "container_id": "tradingview_1cc8f"
+  "container_id": "tradingview_23578"
 }
   );
   </script>
-</div>
-<!-- TradingView Widget END --></div>
+</div></div>
                 <div class="modal-footer" style="width: 100%;"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button></div>
             </div>
         </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="http://florianchiraux.fr/MoneyTaker/assets/js/main.js"></script>
 </body>
 
 </html>

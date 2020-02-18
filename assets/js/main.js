@@ -1,4 +1,5 @@
-const action = function calcul() {
+const button = document.getElementById('button');
+button.onclick = function calcul(){
     const prix_achat = document.getElementById('prix_achat').value;
     const quantite_achetee = document.getElementById('quantite_achetee').value;
     const prix_vente = document.getElementById('prix_vente').value;
@@ -17,7 +18,3 @@ const action = function calcul() {
     if(benefice > 0) document.getElementById('benefices').style.color = "green";
     else document.getElementById('benefices').style.color = "red";
 }
-
-document.getElementById('prix_achat').onchange = action;
-document.getElementById('quantite_achetee').onchange = action;
-document.getElementById('prix_vente').onchange = action;

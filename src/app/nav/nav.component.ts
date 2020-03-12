@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  toggled: string;
+
+  constructor() {
+    this.toggled = "toggled"
+  }
 
   ngOnInit(): void {
+  }
+
+  toggle() {
+    console.log('clic');
+    if(this.toggled == "toggled") {
+      this.toggled = "";
+    } else {
+      this.toggled = "toggled";
+    }
   }
 
 }

@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { EarningCalculatorComponent } from './earning-calculator/earning-calculator.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavComponent } from './nav/nav.component';
+import { AutoStopperComponent } from './auto-stopper/auto-stopper.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EarningCalculatorComponent,
-    NavComponent
+    NavComponent,
+    AutoStopperComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

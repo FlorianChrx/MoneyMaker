@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -8,8 +8,9 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class EarningCalculatorComponent implements OnInit {
 
-  earning: string;
+  earning: number;
   earnForm: FormGroup;
+  @Output() updatePrice = new EventEmitter<number>();
 
   constructor(private formBuilder: FormBuilder) {
   }
@@ -23,7 +24,13 @@ export class EarningCalculatorComponent implements OnInit {
     this.updateValues();
   }
 
+  sendPrice() {
+    this.updatePrice.emit(this.earnForm.get('price').value);
+  }
+
   updateValues() {
-    this.earning = (this.earnForm.get('sold').value * this.earnForm.get('bought').value - this.earnForm.get('bought').value * this.earnForm.get('price').value).toFixed(2);
+    const price :number = this.earnForm.get('price').value;
+    this.earning = (this.earnForm.get('sold').value * this.earnForm.get('bought').value - this.earnForm.get('bought').value * price);
+    this.sendPrice();
   }
 }

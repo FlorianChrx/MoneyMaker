@@ -11,10 +11,22 @@ export class AutoStopperComponent implements OnInit {
   }
 
   @Input() price: number;
+  @Input() lever: number;
+  @Input() long: boolean;
 
   constructor() {}
   
   ngOnChanges(changes :SimpleChanges) {
-    this.price = changes['price'].currentValue;
+    if(changes['price'] != undefined) this.price = changes['price'].currentValue;
+    if(changes['lever'] != undefined) this.lever = changes['lever'].currentValue;
+    if(changes['long'] != undefined) this.long = changes['long'].currentValue;
+  }
+
+  apply(percent : number) :number {
+    if(this.long) {
+      return 1 - (percent/100) / this.lever;
+    } else {
+      return 1 + percent/100 / this.lever;
+    }
   }
 }
